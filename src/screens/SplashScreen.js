@@ -6,7 +6,7 @@ import Animated, { useSharedValue, withSpring } from 'react-native-reanimated';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function WelcomeScreen(){
+export default function SplashScreen(){
     const ring1padding = useSharedValue(0);
     const ring2padding = useSharedValue(0);
     const navigation = useNavigation();
@@ -15,7 +15,7 @@ export default function WelcomeScreen(){
         ring2padding.value = 0;
         setTimeout(()=> ring1padding.value = withSpring(ring1padding.value+hp(5)), 100);
         setTimeout(()=> ring2padding.value = withSpring(ring2padding.value+hp(5.5)), 300);
-        setTimeout(()=> navigation.navigate('OnboardingScreen'), 1000)
+        setTimeout(()=> navigation.navigate('Login'), 1000)
     },[])
     return(
         <View className="flex-1 justify-center items-center space-y-10 bg-amber-500">
